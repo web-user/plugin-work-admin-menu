@@ -16,11 +16,15 @@ License: GPLv2 or later
 /**
  * Fucntion load stylesheets and scripts in backend
  */
+
 if ( ! function_exists( 'admin_head' ) ) {
    function admin_head() {
        wp_enqueue_style( 'backend_style', plugins_url( 'css/backend_style.css', __FILE__ ) );
 
-       wp_enqueue_script( 'sbscrbr-index', plugins_url( 'js/script.js', __FILE__ ), array( 'jquery' ) );
+       wp_enqueue_script( 'script', plugins_url( 'js/script.js', __FILE__ ), array( 'jquery' ) );
 
    }
 }
+
+  /* include js- and css-files  */
+add_action( 'admin_enqueue_scripts', 'admin_head' );

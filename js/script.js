@@ -16,16 +16,19 @@ jQuery(document).ready(function($){
             // window.preventAction = false;
 
         });
+        $(".wp-has-current-submenu ul").css("display","block");
 
         $("#adminmenuwrap ul a").click(function(e){
               if (window.preventAction){
                      e.preventDefault();
               }
+               $( this ).toggleClass( "bounce" )
 
 
             //slide up all the link lists
             $("#adminmenuwrap ul ul").slideUp();
             console.log('ddddd')
+
             //slide down the link list below the h3 clicked - only if its closed
             if(!$(this).next().is(":visible"))
             {
@@ -34,4 +37,5 @@ jQuery(document).ready(function($){
             }
 
         });
+        console.log('yes')
 });
